@@ -21,10 +21,18 @@ int main()
 		input = input / n;
 		temp2++;
 	}
+	if (n == 16)
+	{
+		printf("0x");
+	}
 	for (temp2 = temp2 - 1; temp2 >= 0; temp2--)
 	{
 		temp3 = a[temp2];
 		printf("%c", output[temp3]);
+	}
+	if (n == 2)
+	{
+		printf("B");
 	}
 	return 0;
 }
