@@ -3,6 +3,7 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+
 int sum()
 {
 	int temp = 0, sum = 0;
@@ -26,22 +27,35 @@ int zhengchu()
 		{
 			tj1 = 1;
 		}
-		if (temp1 > 10)
+		if (temp1 > 100)
 		{
-			if (((temp1 - temp1 % 10) / 10) % 3 == 0)
+			if ((temp1 / 100) == 3)//判断百位是否为3
+			{
+				tj2 = 1;
+			}
+			else if ((temp1 / 10 - (temp1 / 100) * 10) == 3)//判断十位是否为3
+			{
+				tj2 = 1;
+			}
+			else if((temp1 % 10) == 3)
 			{
 				tj2 = 1;
 			}
 		}
-		if (temp1 > 100)
+		else
 		{
-			if (((temp1 - temp1 % 100) / 100) % 3 == 0)
+			if (temp1 / 10 == 3)
+			{
+				tj3 = 1;
+			}
+			else if(temp1 % 10 == 3)
 			{
 				tj3 = 1;
 			}
 		}
 
 		tj = tj1 || tj2 || tj3;
+
 		if (tj)
 		{
 			printf("%d\t", temp1);
